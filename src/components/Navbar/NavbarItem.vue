@@ -1,16 +1,33 @@
 <template>
-    <div :class="black">
+    <li :class="navItemClass">
         <slot />
-    </div>
+    </li>
 </template>
 <script>
 export default {
     name: "NavbarItem",
-    props: ['class']
+    props: {
+        navItemClass: {
+            type: String,
+            default: "nav-link navbar_nav-item"
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
-    .red-txt {
-        color: red;
+    .navbar_nav-item {
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 70px;
+        color: #333;
+        text-decoration: none;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        &:active {
+            color: #222;
+        }
     }
 </style>
