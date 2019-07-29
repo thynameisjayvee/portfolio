@@ -1,22 +1,26 @@
 <template>
   <div class="home">
-    <Navbar>
-      <NavbarItem>WOOOOOO</NavbarItem>
-    </Navbar>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mr-auto">
+          <div class="greeting">
+            <h1>
+              Hello, there! <br>
+              This is Jayvee
+            </h1>
+            <span>A Web Developer</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar/Navbar.vue'
-import NavbarItem from '@/components/Navbar/NavbarItem.vue'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-    NavbarItem
-  }
+  name: 'home'
 }
 </script>
 

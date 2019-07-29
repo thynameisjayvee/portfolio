@@ -3,11 +3,14 @@
     <Navbar>
       <!-- <template v-slot:nav_brand> -->
         <NavBrand>
-          <router-link :to="{ name: 'home' }">Portfolio</router-link>
+          <a href="#">JAYVEE</a>
         </NavBrand>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       <!-- </template> -->
       <template v-slot:nav_item>
-        <NavbarItem class="active">
+        <NavbarItem>
           <a href="#home">Home</a>
         </NavbarItem>
         <NavbarItem>
@@ -24,10 +27,6 @@
         </NavbarItem>
       </template>
     </Navbar>
-    <div id="nav">  
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
@@ -36,37 +35,38 @@
 import Navbar from '@/components/Navbar/Navbar.vue'
 import NavbarItem from '@/components/Navbar/NavbarItem.vue'
 import NavBrand from '@/components/Navbar/NavBrand.vue'
+import jQuery from 'jquery'
+
+jQuery(function($){
+  let url = window.location.href
+  let stripUrl = url.replace(window.location.origin + '/', '');
+  if (url === window.location.origin || url === window.location.origin + '/' || stripUrl === '#home' ) {
+    $(".nav-link a[href='#home']").parent().addClass('active')
+  } else {
+    $(".nav-link a[href='"+ stripUrl +"']").parent().addClass('active')
+  }
+ 
+  $('.nav-link a').click(function(){
+    $('.nav-link a').parent().removeClass('active');
+    $(this).parent().addClass('active');
+  });
+})
 
 export default {
   components : {
     Navbar,
     NavbarItem,
     NavBrand
-  },
-  data : function() {
-    return {
-      navLink: `{ name: 'about' }`
-    }
   }
 }
 </script>
 
 <style lang="scss">
+@import '/assets/scss/style.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>

@@ -22,4 +22,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.navbar {
+    box-shadow: 5px 0px 5px #888888
+}
 </style>

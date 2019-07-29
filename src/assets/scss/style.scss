@@ -1,0 +1,23 @@
+.active {
+    a {
+        padding: 5px 0;
+        border-bottom: 3px solid black;
+    }
+}
+.home {
+    background-color: #666;
+    background-image: url(assets/img/bg.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 867px;
+    .greeting {
+        padding-top: 40%;
+        h1 {
+            color: #ff99a3;
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+    }
+}
