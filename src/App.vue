@@ -38,6 +38,7 @@ import NavBrand from '@/components/Navbar/NavBrand.vue'
 import jQuery from 'jquery'
 
 jQuery(function($){
+  // Highlight Link method
   let url = window.location.href
   let stripUrl = url.replace(window.location.origin + '/', '');
   if (url === window.location.origin || url === window.location.origin + '/' || stripUrl === '#home' ) {
@@ -49,6 +50,13 @@ jQuery(function($){
   $('.nav-link a').click(function(){
     $('.nav-link a').parent().removeClass('active');
     $(this).parent().addClass('active');
+  });
+
+  // Screen Resize]
+  $('.home').height($(window).height() - $('.navbar').outerHeight());
+  $( window ).resize(function() {
+    console.log($('.navbar').outerHeight())
+    $('.home').height($(window).height() - $('.navbar').outerHeight());
   });
 })
 

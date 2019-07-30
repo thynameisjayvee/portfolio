@@ -11,13 +11,14 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 867px;
+    // height: 867px;
     .greeting {
         padding-top: 40%;
         h1 {
-            color: #ff99a3;
+            color: #e808ff;
             font-size: 3.5rem;
             font-weight: 700;
+            text-shadow: 2px 2px #000;
         }
     }
 }
