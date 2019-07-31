@@ -1,4 +1,7 @@
 module.exports = {
+  globals: {
+    'jQuery': true
+  },
   root: true,
   env: {
     node: true

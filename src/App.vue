@@ -35,36 +35,37 @@
 import Navbar from '@/components/Navbar/Navbar.vue'
 import NavbarItem from '@/components/Navbar/NavbarItem.vue'
 import NavBrand from '@/components/Navbar/NavBrand.vue'
-import jQuery from 'jquery'
-
-jQuery(function($){
-  // Highlight Link method
-  let url = window.location.href
-  let stripUrl = url.replace(window.location.origin + '/', '');
-  if (url === window.location.origin || url === window.location.origin + '/' || stripUrl === '#home' ) {
-    $(".nav-link a[href='#home']").parent().addClass('active')
-  } else {
-    $(".nav-link a[href='"+ stripUrl +"']").parent().addClass('active')
-  }
- 
-  $('.nav-link a').click(function(){
-    $('.nav-link a').parent().removeClass('active');
-    $(this).parent().addClass('active');
-  });
-
-  // Screen Resize]
-  $('.home').height($(window).height() - $('.navbar').outerHeight());
-  $( window ).resize(function() {
-    console.log($('.navbar').outerHeight())
-    $('.home').height($(window).height() - $('.navbar').outerHeight());
-  });
-})
+// import jQuery from 'jquery'
 
 export default {
   components : {
     Navbar,
     NavbarItem,
     NavBrand
+  },
+  mounted() {
+    jQuery(function($){
+      // Highlight Link method
+      let url = window.location.href
+      let stripUrl = url.replace(window.location.origin + '/', '');
+      if (url === window.location.origin || url === window.location.origin + '/' || stripUrl === '#home' ) {
+        $(".nav-link a[href='#home']").parent().addClass('active')
+      } else {
+        $(".nav-link a[href='"+ stripUrl +"']").parent().addClass('active')
+      }
+    
+      $('.nav-link a').click(function(){
+        $('.nav-link a').parent().removeClass('active');
+        $(this).parent().addClass('active');
+      });
+
+      // Screen Resize]
+      $('.home').height($(window).height() - $('.navbar').outerHeight());
+      $( window ).resize(function() {
+        console.log($('.navbar').outerHeight())
+        $('.home').height($(window).height() - $('.navbar').outerHeight());
+      });
+    })
   }
 }
 </script>
