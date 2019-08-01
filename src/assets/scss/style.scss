@@ -8,19 +8,34 @@
 }
 .home {
     background-color: #666;
-    background-image: url(assets/img/bg.gif);
+    background-image: url(assets/img/bg-static.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     // height: 867px;
     .greeting {
-        padding-top: 40%;
+        padding-top: 25%;
+        max-width: 1080px;
+        min-width: 1080px;
         h1 {
-            color: #e808ff;
+            color: #ffffff;
             font-size: 3.5rem;
             font-weight: 700;
             text-shadow: 2px 2px #000;
+            .text-wrapper {
+                position: relative;
+                display: inline-block;
+                padding-top: 0.2em;
+                padding-right: 0.05em;
+                padding-bottom: 0.1em;
+                overflow: hidden;
+            }
+            .letter {
+                display: inline-block;
+                line-height: 1em;
+                transform-origin: 0 0;
+            }
         }
     }
 }

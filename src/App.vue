@@ -44,6 +44,28 @@ export default {
     NavBrand
   },
   mounted() {
+    // text animation
+    var textWrapper = document.querySelector('.greeting h1 .letter');
+    // eslint-disable-next-line
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+    // eslint-disable-next-line
+    anime.timeline({loop: true})
+      .add({
+        targets: '.greeting h1 .letter',
+        rotateY: [-90, 0],
+        duration: 1300,
+        delay: function(el, i) {
+          return 45 * i;
+        }
+      }).add({
+        targets: '.greeting h1',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+
     jQuery(function($){
       // Highlight Link method
       let url = window.location.href

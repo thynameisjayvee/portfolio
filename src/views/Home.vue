@@ -2,13 +2,28 @@
   <div class="home">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mr-auto">
+        <div class="col-md-12 mr-auto">
           <div class="greeting">
             <h1>
-              Hello, there! <br>
-              This is Jayvee
+              <span class="text-wrapper">
+                <span class="letter">
+                  An Aspiring Fullstack Web Developer<br>
+                  In the Making
+                </span>
+              </span>
             </h1>
-            <span>A Web Developer</span>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <div class="quote">
+            <h1>
+              <i>"You are never too young to lead, and too old to learn"</i>
+            </h1>
+            <h2>
+              - Kofi Annan
+            </h2>
           </div>
         </div>
       </div>
@@ -19,11 +34,17 @@
 <script>
 // @ is an alias to /src
 
+
 export default {
-  name: 'home'
+  name: 'home',
 }
 </script>
 
 <style lang="scss" scoped>
+  .quote {
+    color: #dbdbdb;
+    text-shadow: 1px 1px #000;
+    text-align: right;
+  }
 </style>
 
