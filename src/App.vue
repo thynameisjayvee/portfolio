@@ -27,7 +27,10 @@
         </NavbarItem>
       </template>
     </Navbar>
-    <router-view/>
+    <main>
+      <router-view/>
+    </main>
+    <footer></footer>
   </div>
 </template>
 <script>
@@ -84,10 +87,19 @@ export default {
       // Screen Resize]
       $('.home').height($(window).height() - $('.navbar').outerHeight());
       $( window ).resize(function() {
-        console.log($('.navbar').outerHeight())
         $('.home').height($(window).height() - $('.navbar').outerHeight());
       });
+
+      //smooth scrolling
+      $('.navbar_nav-item a').click(function(e){
+        var jump = $(this).attr('href');
+        console.log(jump)
+        var new_position = $(jump).offset();
+        $('html, body').stop().animate({ scrollTop: new_position.top }, 500);
+        e.preventDefault();
+      });
     })
+
   }
 }
 </script>
